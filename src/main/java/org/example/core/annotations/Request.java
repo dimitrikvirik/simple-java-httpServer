@@ -1,6 +1,6 @@
 package org.example.core.annotations;
 
-import org.example.core.enumns.HttpMethod;
+import org.example.core.enums.HttpMethod;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

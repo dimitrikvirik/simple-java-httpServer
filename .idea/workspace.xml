@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5c25f0e-fcf2-4e65-9bcd-906d234030b3" name="Changes" comment="Add Bean Context">
+    <list default="true" id="d5c25f0e-fcf2-4e65-9bcd-906d234030b3" name="Changes" comment="Add 404 page">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/annotations/Body.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/core/annotations/Query.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/api/CarApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/api/CarApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/annotations/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/annotations/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/context/HttpHandlerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/context/HttpHandlerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/enumns/HttpMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/enums/HttpMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/core/processor/ApiAnnotationProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/core/processor/ApiAnnotationProcessor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -47,6 +55,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dimit\IdeaProjects\java-api\src\main\java\org\example" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.core.annotations" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -76,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664104831824</updated>
-      <workItem from="1664104833195" duration="6330000" />
+      <workItem from="1664104833195" duration="8302000" />
     </task>
     <task id="LOCAL-00001" summary="Add Bean Context">
       <created>1664110954606</created>
@@ -85,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664110954606</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add 404 page">
+      <created>1664111312715</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664111312715</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,15 +122,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Bean Context" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Bean Context" />
+    <MESSAGE value="Add 404 page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 404 page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/api/CarApi.java</url>
-          <line>34</line>
+          <line>29</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/core/context/HttpHandlerBuilder.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

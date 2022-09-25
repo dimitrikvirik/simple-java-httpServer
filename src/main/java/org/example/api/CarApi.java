@@ -1,13 +1,12 @@
 package org.example.api;
 
-import com.sun.net.httpserver.HttpExchange;
 import org.example.core.annotations.Api;
+import org.example.core.annotations.Body;
+import org.example.core.annotations.Query;
 import org.example.core.annotations.Request;
-import org.example.core.context.HttpServerContext;
-import org.example.core.enumns.HttpMethod;
+import org.example.core.enums.HttpMethod;
 import org.example.model.Car;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,25 +17,24 @@ public class CarApi {
 
     @Request(method = HttpMethod.POST)
     public Car addCar(
-            HttpExchange httpExchange
+            @Body Car car
     ) {
-
-        try {
-            Car car = HttpServerContext.objectmapper.readValue(httpExchange.getRequestBody(), Car.class);
-            carList.add(car);
-            return car;
-        } catch (IOException e) {
-            return null;
-        }
+        carList.add(car);
+        return car;
     }
 
     @Request(method = HttpMethod.GET)
-    public List<Car> getCarList() {
-        return carList;
+    public List<Car> getCarList(
+            @Query("brand") String brand
+    ) {
+        if (brand != null) {
+            return carList.stream().filter(car -> car.brand().name().equals(brand)).toList();
+        } else
+            return carList;
     }
 
     @Request(method = HttpMethod.DELETE)
-    public void clear(){
+    public void clear() {
         carList.clear();
     }
 }

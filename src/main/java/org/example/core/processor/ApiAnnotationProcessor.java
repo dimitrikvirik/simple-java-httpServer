@@ -4,7 +4,7 @@ import org.example.core.annotations.Api;
 import org.example.core.annotations.Request;
 import org.example.core.context.BeanContext;
 import org.example.core.context.HttpHandlerBuilder;
-import org.example.core.enumns.HttpMethod;
+import org.example.core.enums.HttpMethod;
 import org.reflections.Reflections;
 
 import java.lang.reflect.InvocationTargetException;
