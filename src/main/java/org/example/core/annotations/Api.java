@@ -1,14 +1,17 @@
-package core.annotations;
+package org.example.core.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.CLASS;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Retention(RUNTIME)
 @Target(TYPE)
-public @interface API {
+public @interface Api {
     String value() default "/";
+
+    String name() default "";
 
 }

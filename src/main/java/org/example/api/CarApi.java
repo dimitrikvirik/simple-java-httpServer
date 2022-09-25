@@ -1,16 +1,42 @@
-package api;
+package org.example.api;
 
-import core.annotations.API;
-import core.annotations.GET;
-import model.Brand;
-import model.Car;
+import com.sun.net.httpserver.HttpExchange;
+import org.example.core.annotations.Api;
+import org.example.core.annotations.Request;
+import org.example.core.context.HttpServerContext;
+import org.example.core.enumns.HttpMethod;
+import org.example.model.Car;
 
-@API("/car")
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+@Api("/car")
 public class CarApi {
 
-    @GET
-    public Car get() {
-        return new Car("Model S", 2000.1, new Brand("Tesla", "USA"));
+    private final List<Car> carList = new ArrayList<>();
+
+    @Request(method = HttpMethod.POST)
+    public Car addCar(
+            HttpExchange httpExchange
+    ) {
+
+        try {
+            Car car = HttpServerContext.objectmapper.readValue(httpExchange.getRequestBody(), Car.class);
+            carList.add(car);
+            return car;
+        } catch (IOException e) {
+            return null;
+        }
     }
 
+    @Request(method = HttpMethod.GET)
+    public List<Car> getCarList() {
+        return carList;
+    }
+
+    @Request(method = HttpMethod.DELETE)
+    public void clear(){
+        carList.clear();
+    }
 }

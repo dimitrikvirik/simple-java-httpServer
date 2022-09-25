@@ -1,4 +1,4 @@
-package core.enumns;
+package org.example.core.enumns;
 
 public enum HttpMethod {
     GET,
