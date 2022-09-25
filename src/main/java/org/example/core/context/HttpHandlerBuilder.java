@@ -40,7 +40,7 @@ public class HttpHandlerBuilder {
                 return HttpServerContext.objectmapper.writeValueAsString(method.invoke(instance, parameters));
             } catch (IllegalAccessException | InvocationTargetException | JsonProcessingException e) {
                 e.printStackTrace();
-               return e.getMessage();
+                return e.getMessage();
             }
         }
 
@@ -65,13 +65,11 @@ public class HttpHandlerBuilder {
             if (httpExecutor != null) {
                 httpExecutor.setExchange(exchange);
                 response = httpExecutor.getResponse();
+                exchange.sendResponseHeaders(200, response.length());
             } else {
-
-                response = "Endpoint with this method not found";
+                response = "Page Not found";
+                exchange.sendResponseHeaders(404, response.length());
             }
-
-            exchange.sendResponseHeaders(200, response.length());
-
             OutputStream os = exchange.getResponseBody();
             os.write(response.getBytes());
             os.close();

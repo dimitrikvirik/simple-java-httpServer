@@ -4,6 +4,6 @@ import org.example.core.SimpleApi;
 
 public class Main {
     public static void main(String[] args) {
-        SimpleApi.run("com.example");
+        SimpleApi.run("org.example");
     }
 }
